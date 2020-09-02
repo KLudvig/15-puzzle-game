@@ -1,0 +1,214 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-areas: /* This is the area that helps us navigate */
+    "A B C D E"
+    "F G H I J"
+    "K L M N O";
+  grid-column-end: span 5;
+  grid-gap: 1px;
+  grid-auto-rows: 80px;
+}
+
+.container {
+  margin-top: 40px;
+  width: 50%;
+  margin: auto;
+  padding: 40px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgb(29 29 29 / 20%);
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 800px) { /* Removes padding and makes container wider for better use on small screens */
+  .container {
+    width: 99%;
+    padding: 0px;
+    box-shadow: none;
+  }
+}
+
+.brick {
+  cursor: pointer;
+  background: #6397b1;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  color: white;
+}
+
+.brick[disabled] {
+  cursor: not-allowed;
+}
+
+.brick:focus {
+  outline: none;
+}
+
+#brickEmpty {
+  background: transparent;
+}
+
+.btn-start {
+  cursor: pointer;
+  background: #6397b1;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  margin: auto;
+  margin-top: 40px;
+  display: block;
+  padding: 12px 20px 12px 20px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgb(112 112 112 / 38%);
+}
+
+.btn-start:hover {
+  transform: scale(1.02);
+}
+
+.btn-start:focus {
+  outline: none;
+}
+
+.number {
+  width: 15px;
+  display: block;
+  margin: auto;
+}
+
+#message {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* Animations */
+
+@keyframes down {
+  0% {
+    height: 100%;
+  }
+  100% {
+    margin-top: 80px;
+    height: 100%;
+  }
+}
+.aniDown {
+  animation-name: down;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes up {
+  0% {
+    height: 100%;
+  }
+  100% {
+    margin-top: -80px;
+    height: 100%;
+  }
+}
+
+.aniUp {
+  animation-name: up;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes left {
+  0% {
+    width: 100%;
+  }
+  100% {
+    margin-left: -100%;
+    width: 100%;
+  }
+}
+
+.aniLeft {
+  animation-name: left;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes right {
+  0% {
+    width: 100%;
+  }
+  100% {
+    margin-left: 100%;
+    width: 100%;
+  }
+}
+
+.aniRight {
+  animation-name: right;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes youWon {
+  0% {
+    background: #ffffff;
+    transform: scale(1);
+  }
+  25% {
+    background: #6397b1;
+    transform: scale(1.03);
+    color: #ffffff;
+  }
+  50% {
+    background: #ffffff;
+    transform: scale(1);
+    color: #000000;
+  }
+  75% {
+    background: #6397b1;
+    transform: scale(1.03);
+    color: #ffffff;
+  }
+  100% {
+    background: #ffffff;
+    transform: scale(1);
+  }
+}
+
+.aniYouWon {
+  animation-name: youWon;
+  animation-duration: 2s;
+}
+
+@keyframes shuffle {
+  0% {
+    transform: rotate(0deg);
+    color: white;
+    height: 80px;
+    width: 100%;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    color: transparent;
+    height: 0px;
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    color: white;
+    height: 80px;
+    width: 100%;
+  }
+}
+
+.aniShuffle {
+  animation-name: shuffle;
+  animation-duration: 1s;
+}

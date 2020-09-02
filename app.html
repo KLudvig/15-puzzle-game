@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script type="text/javascript" src="app.js"></script>
+    <title>15 Puzzle</title>
+</head>
+
+<body onload="runCode()">
+    <div id="container" class="container">
+        <div id="message">This is the solution, are you up to the task?</div>
+        <div class="gameBoard">
+            <!-- Grid area is the key. It tells us where the brick should be in our grid-template-area as set in the css for gameboard -->
+            <button id="brick1" class="brick" style="grid-area: A"><span class="number">1</span></button>
+            <button id="brick2" class="brick" style="grid-area: B"><span class="number">2</span></button>
+            <button id="brick3" class="brick" style="grid-area: C"><span class="number">3</span></button>
+            <button id="brick4" class="brick" style="grid-area: D"><span class="number">4</span></button>
+            <button id="brick5" class="brick" style="grid-area: E"><span class="number">5</span></button>
+            <button id="brick6" class="brick" style="grid-area: F"><span class="number">6</span></button>
+            <button id="brick7" class="brick" style="grid-area: G"><span class="number">7</span></button>
+            <button id="brick8" class="brick" style="grid-area: H"><span class="number">8</span></button>
+            <button id="brick9" class="brick" style="grid-area: I"><span class="number">9</span></button>
+            <button id="brick10" class="brick" style="grid-area: J"><span class="number">10</span></button>
+            <button id="brick11" class="brick" style="grid-area: K"><span class="number">11</span></button>
+            <button id="brick12" class="brick" style="grid-area: L"><span class="number">12</span></button>
+            <button id="brick13" class="brick" style="grid-area: M"><span class="number">13</span></button>
+            <button id="brick14" class="brick" style="grid-area: N"><span class="number">14</span></button>
+            <div id="brickEmpty" class="brick" style="grid-area: O"></button>
+            </div>
+        </div>
+        <button id="btnStart" class="btn-start" onclick="randomize()">Start Game</button>
+    </div>
+</body>
+
+</html>
